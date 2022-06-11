@@ -36,17 +36,14 @@ function generatePassword(){
 
     combinedArray = combinedArray.concat(numbers, specialCharacters, upperCase, lowerCase);
 
-    var result1 = '';
-
-    var combinedArrayLength = combinedArray.length;
+    var code = new Array();
 
     for ( i=0; i<passwordLength; i++) {
    
-      result1 += combinedArray.charAt(Math.floor(Math.random() * combinedArrayLength));
-      
-      console.log(result1)
-   
-     }
+     Math.floor(Math.random() * combinedArray.Length);
+
+      }
+
   
   }
   
