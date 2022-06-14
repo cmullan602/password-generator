@@ -1,11 +1,9 @@
 
 
-var combinedArray = [];
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharacters =["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-let code = ' ';
 
 
 function generatePassword(){
@@ -32,7 +30,11 @@ function generatePassword(){
   return " ";
   }
 
-  else if(numberChoice && characterChoice && upperCase && lowerCase) {
+  else if(numberChoice && characterChoice && upperChoice && lowerChoice) {
+
+    var combinedArray = [];
+
+    let code = ' ';
 
     combinedArray = combinedArray.concat(numbers, specialCharacters, upperCase, lowerCase);
 
@@ -43,26 +45,209 @@ function generatePassword(){
      code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
 
     }
-    
+
     return code;
   }
 
 
-  else if(!numberChoice && characterChoice && upperCase && lowerCase){
+  else if(!numberChoice && characterChoice && upperChoice && lowerChoice){
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    var combinedArray = combinedArray.concat(specialCharacters, upperCase, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+    
+    return code;
 
   }
 
-  else if(!numberChoice && characterChoice && upperCase && lowerCase){
+  else if(!numberChoice && !characterChoice && upperChoice && lowerChoice){
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    var combinedArray = combinedArray.concat(upperCase, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
     
   }
 
-  else if(!numberChoice && characterChoice && upperCase && lowerCase){
+  else if(!numberChoice && characterChoice && upperChoice && !lowerChoice){
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    var combinedArray = combinedArray.concat(specialCharacters, upperCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
     
   }
 
-  else if(!numberChoice && characterChoice && upperCase && lowerCase){
+  else if(!numberChoice && characterChoice && !upperChoice && lowerChoice){
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    var combinedArray = combinedArray.concat(specialCharacters, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
     
   }
+
+  else if(numberChoice && !characterChoice && !upperChoice && lowerChoice){
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    var combinedArray = combinedArray.concat(numbers, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
+    
+  }
+
+  else if(numberChoice && !characterChoice && upperChoice && !lowerChoice) {
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    combinedArray = combinedArray.concat(numbers, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
+  }
+
+  else if(numberChoice && characterChoice && !upperChoice && !lowerChoice) {
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    combinedArray = combinedArray.concat(numbers, specialCharacters);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
+  }
+
+  else if(numberChoice && !characterChoice && !upperChoice && !lowerChoice) {
+
+    let code = ' ';
+
+    var numbersLength = numbers.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += numbers.at(Math.floor(Math.random() * numbersLength));
+
+    }
+
+    return code;
+  }
+
+  else if(!numberChoice && characterChoice && !upperChoice && !lowerChoice) {
+
+    let code = ' ';
+
+    var specialCharactersLength = specialCharacters.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += specialCharacters.at(Math.floor(Math.random() * specialCharactersLength));
+
+    }
+
+    return code;
+  }
+
+  else if(!numberChoice && !characterChoice && upperChoice && !lowerChoice) {
+
+    let code = ' ';
+
+    var upperCaseLength = upperCase.length;
+
+    for (var i=0; i < passwordLength; i++) {
+
+      code += upperCase.at(Math.floor(Math.random() * upperCaseLength));
+
+    }
+
+    return code;
+  }
+
+  else if (!numberChoice && !characterChoice && !upperChoice && lowerChoice) {
+
+    let code = ' ';
+
+    var lowerCaseLength = lowerCase.length;
+
+    for (var i = 0; i < passwordLength; i++) {
+
+      code += lowerCase.at(Math.floor(Math.random() * lowerCaseLength));
+
+    }
+
+    return code
+  }
+
 }
 
 
