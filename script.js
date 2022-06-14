@@ -49,6 +49,62 @@ function generatePassword(){
     return code;
   }
 
+  else if(numberChoice && characterChoice && !upperChoice && lowerChoice) {
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    combinedArray = combinedArray.concat(numbers, specialCharacters, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
+  }
+
+  else if(numberChoice && !characterChoice && upperChoice && lowerChoice) {
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    combinedArray = combinedArray.concat(numbers, upperCase, lowerCase);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
+  }
+
+  else if(numberChoice && characterChoice && upperChoice && !lowerChoice) {
+
+    var combinedArray = [];
+
+    let code = ' ';
+
+    combinedArray = combinedArray.concat(numbers, upperCase, specialCharacters);
+
+    var combinedArrayLength = combinedArray.length;
+
+    for (var i=0; i < passwordLength; i++) {
+   
+     code += combinedArray.at(Math.floor(Math.random() * combinedArrayLength));
+
+    }
+
+    return code;
+  }
 
   else if(!numberChoice && characterChoice && upperChoice && lowerChoice){
 
