@@ -8,13 +8,16 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 
 function generatePassword(){
 
-  var passwordLength = prompt("How many Characters would you like?");
+  var passwordLength = parseInt(prompt("How many Characters would you like?"));
 
   if (passwordLength < 8 || passwordLength >  128) {
   alert("Password must be between 8 & 128 characters");
   return " ";
   }
-
+  if (Number.isNaN(passwordLength)){
+    alert("Password length must be a number.")
+    return ' ';
+  }
  
   var numberChoice = confirm("Click OK to confirm you want to use numbers.");
 
@@ -24,7 +27,7 @@ function generatePassword(){
 
   var lowerChoice =confirm("Click OK to confirm you want to use lower case");
 
-  
+
   if(!numberChoice && !characterChoice && !upperChoice && !lowerChoice) {
   alert("Must use at least one.")
   return " ";
